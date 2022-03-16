@@ -5,6 +5,7 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "weight_record")
 public class WeightRecord {
 
     @Id

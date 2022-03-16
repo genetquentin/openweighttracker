@@ -6,6 +6,7 @@ import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
+@Table(name = "app_user")
 public class AppUser {
 
     @Id
@@ -22,13 +23,13 @@ public class AppUser {
     @Column(name = "password_user")
     private String passwordUser;
 
-    @OneToMany
+    @ManyToOne
     private RoleUser roleUser;
 
     @OneToOne
     private GoalUser goalUser;
 
-    @OneToOne
+    @ElementCollection
     private List<WeightRecord> weightsList;
 
 

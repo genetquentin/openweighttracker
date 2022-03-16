@@ -3,6 +3,7 @@ package com.quentingenet.openweighttracker.data.entity;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "role_user")
 public class RoleUser {
 
     @Id
