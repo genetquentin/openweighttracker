@@ -10,25 +10,25 @@ public class AppUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_user", nullable = false)
+    @Column(name = "id_user", nullable = false, unique = true)
     private Integer idUser;
 
     @NotBlank
-    @Column(name = "email_user")
+    @Column(name = "email_user", nullable = false, unique = true)
     private String emailUser;
 
     @NotBlank
-    @Size(min = 4, max = 50, message = "Password must have at least 4 characters and maximum 50.")
+    @Size(min = 4, max = 30, message = "Password must have at least 4 characters and maximum 30.")
     @Column(name = "password_user")
     private String passwordUser;
 
-    @ManyToOne
+    @OneToMany
     private RoleUser roleUser;
 
     @OneToOne
     private GoalUser goalUser;
 
-
+    @OneToOne
     private List<WeightRecord> weightsList;
 
 

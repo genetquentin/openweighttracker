@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import java.util.HashMap;
 import java.util.Map;
 
+
+//ExceptionResolver is used to display error and exceptions when api is tested via http requests.
 @ControllerAdvice
 public class ExceptionResolver {
 

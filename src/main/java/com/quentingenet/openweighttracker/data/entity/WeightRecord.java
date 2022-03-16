@@ -1,25 +1,39 @@
 package com.quentingenet.openweighttracker.data.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
 public class WeightRecord {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_weight_record", nullable = false)
+    @Column(name = "id_weight_record", nullable = false, unique = true)
     private Integer idWeightRecord;
 
+    @NotNull
+    @Column(name = "weight_record_date", nullable = false)
     private LocalDate weightRecordDate;
 
+    @NotNull
+    @Column(name = "weight_kg_record", nullable = false, precision = 1)
     private Float WeightKgRecord;
 
+    @NotNull
+    @Column(name = "percent_fat_mass", nullable = false, precision = 1)
     private Float percentFatMass;
 
+    @NotNull
+    @Column(name = "percent_muscular_mass", nullable = false, precision = 1)
     private Float percentMuscularMass;
 
+    @NotNull
+    @Column(name = "percent_body_water", nullable = false, precision = 1)
     private Float percentBodyWater;
 
+    @NotNull
+    @Column(name = "percent_bone_mass", nullable = false, precision = 1)
     private Float percentBoneMass;
 
 
